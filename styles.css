@@ -1,8 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 :root {
-    --clr-gray-100: ;
+    --clr-primary: #6366F1;
+    --clr-secondary: #8B5CF6;
+    --clr-bg: #ffffff;
+    --clr-gray-100: #F3F6FF;
+    --clr-gray-200: #EFF2FC;
+    --clr-gray-300: #E2E5F1;
+    --clr-gray-400: #D4D7E5;
+    --clr-gray-500: #B4B7C9;
+    --clr-gray-600: #9397AD;
+    --clr-gray-700: #565973;
+    --clr-gray-800: #33354D;
+    --clr-gray-900: #0B0F19;
+    --clr-error: #EF4444;
+    --clr-success: #22C55E;
+    --clr-warning: #FFBA08;
+    --clr-info: #4C82F7;
+    --br-m: 0.375em;
+    --br-l: 0.5em;
+    --clr-text-body: var(--clr-gray-700);
+    --clr-text-heading: var(--clr-gray-900);
+    --clr-text-navigation: var(var(--clr-gray-800))
 }
 
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 * {
     padding: 0;
@@ -11,9 +36,179 @@
 }
 
 body {
-    font-family: var();
+    font-family: "manrope", sans-serif;
+    line-height: 1.6;
+    background-color: var(--clr-bg);
+}
+
+img {
+    display: block;
+    width: 100%
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    color: var(--clr-text-heading);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    margin-inline: auto;
+}
+
+
+.space-y-2 > * + * {
+    margin-top: 2rem;
+}
+.space-y-3 > * + * {
+    margin-top: 3rem;
+}
+.space-y-4 > * + * {
+    margin-top: 4rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+
+
+.d1 {
+    font-size: 5rem;
+    color: var(--clr-gray-900);
+}
+
+.d4 {
+    font-size: 3.5rem;
+    color: var(--clr-gray-900)
+}
+
+.body-l {
+    font-size: 1.125rem;
+    color: var(--clr-gray-700);
+}
+
+.body-s {
+    font-size: 0.875rem;
+    color: var(--clr-gray-700);
+}
+
+
+.text-lg {
+    font-size: 1.125rem;
+
 }
 
 .first {
     font-family: "manrope";
+    padding: 1rem;
+}
+
+.btn {
+    font-size: .9rem;
+    padding: 0.6em 2em;
+    display: flex;
+    gap: 1rem;
+    text-wrap: nowrap;
+    border-radius: var(--br-m);
+    text-decoration: none;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    img {
+        height: 1.5em;
+    }
+
+}
+
+
+
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: #fff;
+
+    transition: background-color 250ms;
+
+    &:hover,
+    &:focus-visible {
+        background-color: var(--clr-secondary);
+    }
+}
+
+
+
+
+/* NAVBAR */
+
+.main-nav{
+    width: 80%;
+    margin: 0 auto;
+    padding-block: 1rem;
+    position: relative;
+
+    .skip link {
+        display: inline-block;
+        padding: 1rem;
+        background-color: var(--clr-bg);
+        border: 1px solid var(--clr-primary);
+        border-radius: 0 1rem 1rem 0;
+        position: absolute;
+        left: -100vw;
+        top: 10rem;
+
+        transition: 300ms;
+        
+        &:focus {
+            left: 0;
+        }
+    }
+
+
+
+.container,
+.main-menu {
+    display: flex;
+    align-items: center;
+    }
+}
+
+.main-menu {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 3rem;
+}
+
+.nav-link {
+    color: var(--clr-text-navigation);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover,
+    &:focus-visible {
+        color: var(--clr-primary);
+    }
+}
+
+.skip-link {
+    display: none;
 }
